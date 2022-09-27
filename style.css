@@ -1,3 +1,4 @@
+
 * {
     box-sizing: border-box;
 }
@@ -22,13 +23,53 @@ body {
     align-items: center;
 }
 
+body.dark-mode {
+    background: radial-gradient(rgb(26, 53, 71),#011013) no-repeat;
+}
+
+body.dark-mode .app-wrapper h1{
+    background-color: rgb(11, 17, 19);
+    color: white;
+}
+
+body.dark-mode .app-wrapper .music-player-wrapper {
+    background: linear-gradient(rgb(41, 88, 110), rgb(13, 53, 90), rgb(47, 73, 107));
+    color: white;
+}
+
+body.dark-mode .app-wrapper .music-player-wrapper .music-details{
+    background: linear-gradient(rgb(35, 41, 44), rgb(13, 53, 90), rgb(23, 35, 51));
+}
+
+body.dark-mode .app-wrapper .music-player-wrapper .music-progress-wrapper .progress-bar{
+    background: linear-gradient(to left, rgb(108, 177, 218), black);
+}
+
+body.dark-mode .app-wrapper .music-player-wrapper .music-details h3{
+    color: white;
+}
+
+body.dark-mode .app-wrapper .music-player-wrapper .action-btn{
+    background: linear-gradient(rgb(173, 252, 255), rgb(192, 223, 252), rgb(110, 130, 156));
+    color: black;
+}
+
+body.dark-mode .app-wrapper .music-player-wrapper .action-btn:hover{
+    background: linear-gradient(to top, rgb(173, 252, 255), rgb(192, 223, 252), rgb(110, 130, 156));
+}
+
 h1 {
-    transform: translateY(-100px);
+    transform: translateY(-80px);
     margin-bottom: 200px;
+    background-color: rgb(0, 195, 255);
+    padding: 0.5em;
+    color: rgb(8, 0, 54);
+    box-shadow: 1px 1px 5px;
+    border-radius: 4px 10px 4px;
 }
 
 .music-player-wrapper {
-    background: linear-gradient(rgb(25, 182, 255), rgb(0, 132, 255), rgb(0, 63, 146));
+    background: linear-gradient(rgb(111, 207, 252), rgb(109, 170, 226), rgb(37, 123, 236));
     padding: 15px 30px;
     box-shadow: 1px 1px 5px;
     border-radius: 5px 15px 5px;
@@ -127,7 +168,6 @@ h1 {
 .action-btn:active {
     transform: scale(0.97);
     background-color: rgb(0, 30, 44);
-
 }
 
 .action-btn:focus {
@@ -197,4 +237,73 @@ h1 {
     height: 8px;
     width: 0%;
     transition: width 0.2s;
+}
+
+.checkbox {
+    visibility: hidden;
+}
+
+.checkbox-label {
+    background-color: rgb(48, 48, 48);
+    cursor: pointer;
+    width: 79px;
+    height: 38px;
+    border-radius: 2px 10px 2px;
+    display: inline-block;
+    position: relative;
+    border: 1px solid rgb(180, 253, 250);
+}
+
+.checkbox:checked  + .checkbox-label{
+    background-color: rgb(187, 230, 233);
+}
+
+.edgy-squircle {
+    background-color: rgb(130, 247, 255);
+    height: 30px;
+    width: 30px;
+    border-radius: 2px 6px 2px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    align-items: center;
+    justify-content: center;
+    animation: switchOff 0.3s linear forwards;
+}
+
+.checkbox:checked + .checkbox-label .edgy-squircle {
+    animation: switchOn 0.3s linear forwards
+}
+@keyframes switchOn {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(40px);
+    }
+}
+
+@keyframes switchOff {
+    0% {
+        transform: translateX(40px);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.switch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.switch span {
+    margin-top: 15px;
 }

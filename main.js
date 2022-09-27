@@ -10,6 +10,9 @@ const progressWrapper = document.querySelector('.music-progress-wrapper')
 
 const title = document.querySelector('.title')
 
+const modeInput = document.querySelector('.checkbox')
+const modeLabel = document.querySelector('.switch span')
+const edgySquircle = document.querySelector('.edgy-squircle')
 
 const songsTitleArr = ['2tech-audio-corporate', '2tech-audio-event', '2tech-audio-happier', '2tech-audio-real-estate-2_0', '2tech-audio-technology']
 
@@ -101,3 +104,34 @@ nextBtn.addEventListener('click', nextSong)
 audio.addEventListener('timeupdate', updateProgress)
 progressWrapper.addEventListener('click', setProgress)
 audio.addEventListener('ended', nextSong)
+modeInput.addEventListener('click', (event) => changeMode(event.target))
+
+function changeMode() {
+    if (modeInput.checked) {
+    modeLabel.innerHTML =  `Dark Mode`
+    modeLabel.style.color = 'white'
+    document.querySelector('body').classList.add('dark-mode')
+    edgySquircle.style.backgroundColor = 'black'
+    } else {
+    modeLabel.innerHTML =  `Light Mode`
+    modeLabel.style.color = 'black'  
+    document.querySelector('body').classList.remove('dark-mode') 
+    edgySquircle.style.backgroundColor = 'rgb(130, 247, 255)' 
+    } 
+}
+
+checkStartup()
+
+function checkStartup() {
+    if (modeInput.checked) {
+        modeLabel.innerHTML =  `Dark Mode`
+        modeLabel.style.color = 'white'
+        document.querySelector('body').classList.add('dark-mode')
+        edgySquircle.style.backgroundColor = 'black'
+        } else {
+        modeLabel.innerHTML =  `Light Mode`
+        modeLabel.style.color = 'black'  
+        document.querySelector('body').classList.remove('dark-mode') 
+        edgySquircle.style.backgroundColor = 'rgb(130, 247, 255)' 
+        }
+}

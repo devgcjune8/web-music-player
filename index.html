@@ -8,38 +8,45 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
-<body>
+<body class="dark-mode">
+    <div class="app-wrapper">
     <h1>Web Music Player</h1>
 
-    <div class="music-player-wrapper">
-        <div class="music-details">
-            <div class="music-progress-wrapper">
-                <div class="progress-bar"></div>
+        <div class="music-player-wrapper">
+            <div class="music-details">
+                <div class="music-progress-wrapper">
+                    <div class="progress-bar"></div>
+                </div>
+                <h3 class="title">Corporate</h3> 
             </div>
-            <h3 class="title">Corporate</h3> 
-        </div>
 
-        <audio src="./audio/2tech-audio-corporate.mp3" class="audio"></audio>
-        <div class="img-wrapper">
-            <img src="./default_album_picture/namroud-gorguis-FZWivbri0Xk-unsplash.jpg" alt="music-player-art" class="music-player-art">
-        </div>
+            <audio src="./audio/2tech-audio-corporate.mp3" class="audio"></audio>
+            <div class="img-wrapper">
+                <img src="./default_album_picture/namroud-gorguis-FZWivbri0Xk-unsplash.jpg" alt="music-player-art" class="music-player-art">
+            </div>
 
-        <div class="navigation">
-            <button class="previous action-btn">
-                <span class="material-symbols-outlined">
-                    skip_previous
-                    </span>
-            </button>
-            <button class="play action-btn">
-                <span class="material-symbols-outlined go">
-                    play_arrow
-                    </span>
-            </button>
-            <button class="next action-btn">
-                <span class="material-symbols-outlined">
-                    skip_next
-                    </span>
-            </button>
+            <div class="navigation">
+                <button class="previous action-btn">
+                    <span class="material-symbols-outlined">
+                        skip_previous
+                        </span>
+                </button>
+                <button class="play action-btn">
+                    <span class="material-symbols-outlined go">
+                        play_arrow
+                        </span>
+                </button>
+                <button class="next action-btn">
+                    <span class="material-symbols-outlined">
+                        skip_next
+                        </span>
+                </button>
+            </div>
+        </div>
+        <div class="switch">
+            <input type="checkbox" id="checkbox" class="checkbox">
+            <label for="checkbox" class="checkbox-label"><div class="edgy-squircle"></div></label>
+        <span>Light Mode</span>
         </div>
     </div>
     <script src="./main.js"></script>
